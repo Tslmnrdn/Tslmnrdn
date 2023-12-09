@@ -16,7 +16,7 @@ body,
 button,
 input{
     font-family: "Times new roman", sans-serif;
-    font-size: .938rem;
+    font-size: 25px;
     color: hsl(0, 0%, 100%);
 }
 
@@ -96,7 +96,7 @@ audio::-webkit-media-controls-panel{
     top: 0;
     left: 0;
     width: 100%;
-    background-color: transparent;
+    background-color: black;
     padding: 1.3rem 10%;
     display: flex;
     justify-content: space-between;
@@ -138,11 +138,14 @@ audio::-webkit-media-controls-panel{
     color: #fff;
     text-decoration: none;
     font-weight: 700;
+    width: 100px;
+    height: 40px;
 }
 
 /* menu */
 
 .navbar a {
+    position: relative;
     font-size: 1.15rem;
     color: #fff;
     text-decoration: none;
@@ -150,11 +153,22 @@ audio::-webkit-media-controls-panel{
     margin-left: 2.5rem;
 }
 
-.navbar a.active,
-.navbar a:hover {
-    background: linear-gradient(45deg, rgb(103, 77, 55), #3cf);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+
+}
+.navbar a:hover::after{
+    transform: scaleX(1);
 }
 
 #check{
@@ -200,9 +214,7 @@ audio::-webkit-media-controls-panel{
         left: 0;
         width: 100%;
         height: 0;
-        background: rgba(0, 0, 0, .1);
-        backdrop-filter: blur(50px);
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1); /* hvreelsen hesegt svvder ogno*/
+        background: rgb(13, 13, 13);
         overflow: hidden; /* menun deer darahad text garj ireed x darahaar alga bolno*/
         transition: .3s ease; /*menu hvreelsen heseg 0.3 sec doosho garj irj deeshee huraagdana*/
 
@@ -227,6 +239,19 @@ audio::-webkit-media-controls-panel{
         opacity: 1;
         transition-delay: calc(.1s * var(--i));
     }
+    .navbar a::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        width: 17%;
+        height: 2px;
+        left: 41.5%;
+        background: white;
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: transform .5s;
+    
+    }
 }
 
 /* home */
@@ -236,7 +261,7 @@ audio::-webkit-media-controls-panel{
 
 .home__bg{
     position: absolute;
-    top: 0;
+    top: 50px;
     left: 0;
     width: 100%;
     height: 750px;
@@ -276,7 +301,7 @@ audio::-webkit-media-controls-panel{
 }
 
 .home__description{
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-bottom: 2rem;
 }
 
@@ -381,8 +406,8 @@ audio::-webkit-media-controls-panel{
 
 .about__img{
     
-    height: 200px;
-    width: 300px;
+    height: 300px;
+    width: 400px;
     transition: transform .4s;
 }
 
@@ -618,7 +643,7 @@ audio::-webkit-media-controls-panel{
     margin-bottom: 1rem;
 }
 .footer__description{
-    font-size: 1.2rem;
+    font-size: 18px;
 }
 
 .footer__links{
